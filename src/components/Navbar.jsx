@@ -1,14 +1,14 @@
 import "./Navbar.css";
 
 const links = [
-  { title: "Hot", path: "/" },
-  { title: "Juicy", path: "/juicy" },
-  { title: "Cozy", path: "/cozy" },
+  { id: 0, title: "Hot", path: "/" },
+  { id: 1, title: "Juicy", path: "/juicy" },
+  { id: 2, title: "Cozy", path: "/cozy" },
 ];
 
 export default function Navbar() {
   const listLinks = links.map((link) => (
-    <a className="link" key={link.id}>
+    <a key={link.id} className="link">
       {link.title}
     </a>
   ));
