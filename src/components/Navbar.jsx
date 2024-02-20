@@ -1,17 +1,29 @@
 import "./Navbar.css";
 
-const links = [
-  { id: 0, title: "Hot", path: "/" },
-  { id: 1, title: "Juicy", path: "/juicy" },
-  { id: 2, title: "Cozy", path: "/cozy" },
-];
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
-  const listLinks = links.map((link) => (
-    <a key={link.id} className="link">
-      {link.title}
-    </a>
-  ));
-
-  return <nav className="navbar">{listLinks}</nav>;
+  return (
+    <nav className="navbar">
+      <NavLink exact={true} to="/" className="link" activeClassName="active">
+        Hot
+      </NavLink>
+      <NavLink
+        exact={false}
+        to="/juicy"
+        className="link"
+        activeClassName="active"
+      >
+        Juicy
+      </NavLink>
+      <NavLink
+        exact={false}
+        to="/cozy"
+        className="link"
+        activeClassName="active"
+      >
+        Cozy
+      </NavLink>
+    </nav>
+  );
 }
